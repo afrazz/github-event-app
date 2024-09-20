@@ -49,7 +49,6 @@ export const fetchEvents = createAsyncThunk(
     'users/fetchEvents',
     // Declare the type your function argument here:
     async (_, {rejectWithValue}) => {
-        console.log(process.env.EXPO_GITHUB_TOKEN, 'token')
         try {
             const response = await fetch(`https://api.github.com/users/afrazz/events/public`, {
                 method: 'GET',
