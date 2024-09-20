@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
-
 // Define a type for the slice state
 interface eventsState {
   loading: boolean,
@@ -54,7 +53,7 @@ export const fetchEvents = createAsyncThunk(
                 method: 'GET',
                 headers: {
                   'Accept': 'application/vnd.github+json',
-                  'Authorization': `Bearer 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`,
+                  'Authorization': `Bearer ${process.env.EXPO_PUBLIC_GITHUB_TOKEN}`,
                   'X-GitHub-Api-Version': '2022-11-28'
                 }
               });
